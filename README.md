@@ -19,29 +19,36 @@ Follow these steps to set up and run the project:
 
 1. **Build the Docker Image**
    Navigate to the `docker` directory and build the Docker image:
+
    ```bash
    cd docker
    docker compose build
+   
 2. **Start the Container** Launch the Docker container in detached mode:
-    ```
-    docker compose up -d
-    ```
-3. **Access the Container** Enter the container's interactive shell to execute commands:
-    ```
-    docker compose exec -it yoloCounter /bin/bash
-    ```
+
+   ```bash
+   docker compose up -d
+
+4. **Access the Container** Enter the container's interactive shell to execute commands:
+
+   ```bash
+   docker compose exec -it yoloCounter /bin/bash
+
 4.Download prerequisites
-    ```
-    conda create -n mambayolo -y python=3.11 &&
-    conda activate mambayolo
-    ```
+
+   ```bash
+   conda create -n mambayolo -y python=3.11 && conda activate mambayolo
+   ```
+
 5. Install Dependencies
-    ```
+
+   ```bash
     pip3 install torch===2.3.0 torchvision torchaudio && pip install seaborn thop timm einops && cd selective_scan && pip install . && cd .. && pip install -v -e .
     ```
 
 6.   **Run the Detection Script** Inside the container, navigate to the Mamba-YOLO directory and run the main script to start person detection:
-    ```
+
+   ```bash
     cd Mamba-YOLO/
     python yolosComparition.py
     ```
